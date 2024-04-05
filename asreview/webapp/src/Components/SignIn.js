@@ -50,14 +50,14 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-const SignIn = ({ allowAccountCreation, emailVerification, oAuthConfig }) => {
+const SignIn = ({ allowAccountCreation, emailVerification, oAuthConfig, mobileScreen }) => {
   return (
     <Root>
       <Fade in>
         <Box>
-          <Card className={classes.card} variant="outlined">
-            <CardContent className={classes.cardContent}>
-              <Stack spacing={3}>
+          <Card className={mobileScreen ? classes.mobileCard : classes.card} variant="outlined">
+            <CardContent className={mobileScreen ? classes.mobileCardContent : classes.cardContent}>
+              <Stack spacing={mobileScreen ? 1 : 3}>
                 <Stack className={classes.header} spacing={2}>
                   <img
                     className={classes.logo}
